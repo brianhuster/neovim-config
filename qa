@@ -56,7 +56,7 @@ vim.opt.termguicolors = true
 require("nvim-tree").setup()
 
 vim.cmd([[
-    autocmd VimEnter * execute "belowright split | terminal" | NvimTreeOpen  
+    autocmd VimEnter * execute "belowright split | terminal" | NvimTreeOpen | wincmd l | setlocal winheight=100
     autocmd BufEnter * if &buftype == 'terminal' | setlocal nocursorline | setlocal winheight=10 | endif
     autocmd BufEnter * if &buftype != 'terminal' | setlocal winheight=100 | endif
 ]])

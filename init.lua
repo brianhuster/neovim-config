@@ -1,3 +1,3 @@
-require('plugins')
-require('settings')
-require('keybindings')
+require('lua.plugins')
+require('lua.settings')
+require('lua.keybindings')

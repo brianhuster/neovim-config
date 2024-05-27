@@ -40,7 +40,8 @@ require'nvim-treesitter.configs'.setup {
   }
 
 vim.cmd(':colorscheme vim')
-vim.cmd('syntax enable')
+vim.cmd(':TSInstall lua')
+vim.cmd(':syntax on')
 
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1

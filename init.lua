@@ -40,7 +40,10 @@ require'nvim-treesitter.configs'.setup {
   }
 
 vim.cmd(':colorscheme vim')
-vim.cmd(':TSInstall lua')
+local parser_list = require'nvim-treesitter.parsers'.available_parsers()
+if not vim.tbl_contains(parser_list, 'lua') then
+    vim.cmd(':TSInstall lua')
+end
 vim.cmd(':syntax on')
 
 -- disable netrw at the very start of your init.lua

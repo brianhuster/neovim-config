@@ -1,11 +1,30 @@
+function bufEnter()
+    if vim.bo.buftype == 'terminal' then
+        vim.wo.cursorline = false
+        vim.wo.number = false
+        vim.o.winheight = 10
+    else
+        vim.o.winheight = 100
+    end
+end
+
+function VimEnter()
+    -- set up terminal when opening nvim
+    vim.cmd("belowright split | terminal")
+    vim.wo.number = false
+    vim.wo.cursorline = false
+
+    -- open NvimTree
+    vim.cmd("NvimTreeOpen")
+end
+
 -- optionally enable 24-bit colour and setting the old color scheme
 vim.opt.termguicolors = true
 vim.cmd(':colorscheme vim')
 
 vim.cmd([[
-    autocmd VimEnter * execute "belowright split | terminal" | NvimTreeOpen  
-    autocmd BufEnter * if &buftype == 'terminal' | setlocal nocursorline | setlocal winheight=10 | endif
-    autocmd BufEnter * if &buftype != 'terminal' | setlocal winheight=100 | endif
+    autocmd VimEnter * lua VimEnter()
+    autocmd BufEnter * lua bufEnter()
 ]])
 
 -- General settings

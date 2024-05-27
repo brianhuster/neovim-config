@@ -40,6 +40,8 @@ vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', {})
 -- delete without copying to clipboard
 vim.api.nvim_set_keymap('n', 'x', '"_d', {})
 vim.api.nvim_set_keymap('v', 'x', '"_d', {})
+vim.api.nvim_set_keymap('n', 'xx', '"_dd', {})
+vim.api.nvim_set_keymap('v', 'xx', '"_dd', {})
 
 -- select all
 vim.api.nvim_set_keymap('n', '<M-a>', 'ggVG', {})

@@ -1,6 +1,5 @@
 function bufEnter()
     if vim.bo.buftype == 'terminal' then
-        vim.wo.cursorline = false
         vim.wo.number = false
         vim.o.winheight = 10
     else
@@ -12,7 +11,6 @@ function VimEnter()
     -- set up terminal when opening nvim
     vim.cmd("belowright split | terminal")
     vim.wo.number = false
-    vim.wo.cursorline = false
 
     -- open NvimTree
     vim.cmd("NvimTreeOpen")
@@ -31,10 +29,10 @@ vim.cmd([[
 vim.o.mouse = 'a'
 vim.o.number = true
 vim.o.hidden = true
-vim.o.cursorline = true
 vim.o.expandtab = true
 vim.o.autoindent = true
 vim.o.smartindent = true
+vim.o.cursorline = false
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 vim.o.encoding = 'utf8'

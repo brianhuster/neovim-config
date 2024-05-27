@@ -32,9 +32,8 @@ function TerminalMode()
 end
 
 -- Terminal keybindings
-vim.api.nvim_set_keymap('n', '<M-t>', ':lua TerminalMode()<CR>', {})
-vim.api.nvim_set_keymap('i', '<M-t>', ':lua TerminalMode()<CR>', {})
-vim.api.nvim_set_keymap('v', '<M-t>', ':lua TerminalMode()<CR>', {})
+vim.api.nvim_set_keymap('n', 't', ':lua TerminalMode()<CR>', {})
+vim.api.nvim_set_keymap('v', 't', ':lua TerminalMode()<CR>', {})
 vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', {})
 
 -- delete without copying to clipboard

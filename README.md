@@ -31,7 +31,7 @@ The configuration includes the following custom keybindings:
 - `<space>d`: Show diagnostics (Coc)
 - `<leader>do`: Do code action (Coc)
 - `<leader>rn`: Rename (Coc)
-- `Alt+T`: Open terminal in split window
+- `T` (from normal or visual mode): Open terminal
 - `x`: Delete without copying to clipboard
 - `Alt+A`: Select all
 - `Ctrl+P`: Format code with Prettier

@@ -73,5 +73,5 @@ vim.g.coc_global_extensions = {
 
 -- vim-airline
 vim.g['airline_powerline_fonts'] = 1
-vim.g['airline_theme'] = 'simple'
+vim.g['airline_theme'] = 'light'
 vim.g['airline_section_b'] = '%{expand("%:t")}'

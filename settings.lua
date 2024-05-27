@@ -1,0 +1,24 @@
+-- optionally enable 24-bit colour and setting the old color scheme
+vim.opt.termguicolors = true
+vim.cmd(':colorscheme vim')
+
+vim.cmd([[
+    autocmd VimEnter * execute "belowright split | terminal" | NvimTreeOpen  
+    autocmd BufEnter * if &buftype == 'terminal' | setlocal nocursorline | setlocal winheight=10 | endif
+    autocmd BufEnter * if &buftype != 'terminal' | setlocal winheight=100 | endif
+]])
+
+-- General settings
+vim.o.mouse = 'a'
+vim.o.number = true
+vim.o.hidden = true
+vim.o.cursorline = true
+vim.o.expandtab = true
+vim.o.autoindent = true
+vim.o.smartindent = true
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.encoding = 'utf8'
+vim.o.history = 5000
+vim.o.clipboard = 'unnamedplus'
+vim.o.autowriteall = true -- set autosave

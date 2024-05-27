@@ -1,6 +1,7 @@
 # neovim-config
 
 ## Screenshot
+![image](https://github.com/brianhuster/neovim-config/assets/111893501/cfbb3573-64c1-4618-b49a-39ff081b5379)
 
 ## Plugins
 

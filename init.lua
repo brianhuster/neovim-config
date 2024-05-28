@@ -1,3 +1,4 @@
-require('lua.plugins')
-require('lua.settings')
-require('lua.keybindings')
+vim.opt.runtimepath:prepend("~/.config/nvim")
+require('plugins')
+require('settings')
+require('keybindings')

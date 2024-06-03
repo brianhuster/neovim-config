@@ -50,3 +50,6 @@ vim.api.nvim_set_keymap('i', '<M-a>', 'ggVG', {})
 vim.api.nvim_set_keymap('n', '<C-p>', ':Prettier', {})
 vim.api.nvim_set_keymap('i', '<C-p>', ':Prettier', {})
 vim.api.nvim_set_keymap('v', '<C-p>', ':PrettierFragment', {})
+
+--save and quit
+vim.api.nvim_set_keymap('n', 'wq', ':wa<CR>qa!<CR>', {})

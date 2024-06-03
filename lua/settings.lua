@@ -1,7 +1,7 @@
 function bufEnter()
     if vim.bo.buftype == 'terminal' then
         vim.wo.number = false
-        vim.o.winheight = 10
+        vim.o.winheight = 11
     else
         vim.o.winheight = 100
     end

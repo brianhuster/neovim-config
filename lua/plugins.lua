@@ -65,7 +65,6 @@ vim.g.coc_global_extensions = {
     'coc-eslint',
     'coc-prettier',
     'coc-python',
-    'coc-pyright',
     'coc-clangd',
     'coc-html',
     'coc-lua'

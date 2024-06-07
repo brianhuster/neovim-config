@@ -1,7 +1,7 @@
 function bufEnter()
     if vim.bo.buftype == 'terminal' then
         vim.wo.number = false
-        vim.o.winheight = 11
+        vim.o.winheight = 12
     elseif vim.bo.buftype == 'NvimTree' then
         vim.cmd("autocmd BufEnter NvimTree normal")
     else

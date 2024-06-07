@@ -50,6 +50,7 @@ vim.api.nvim_set_keymap('v', 'xx', '"_dd', {})
 -- select all
 vim.api.nvim_set_keymap('n', '<M-a>', 'ggVG', {})
 vim.api.nvim_set_keymap('i', '<M-a>', 'ggVG', {})
+vim.api.nvim_set_keymap('v', '<M-a>', 'ggVG', {})
 
 -- prettier
 vim.api.nvim_set_keymap('n', '<C-p>', ':Prettier', {})

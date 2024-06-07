@@ -55,6 +55,24 @@ require'nvim-treesitter.configs'.setup {
 local parser_list = require'nvim-treesitter.parsers'.available_parsers()
 if not vim.tbl_contains(parser_list, 'lua') then
     vim.cmd(':TSInstall lua')
+    vim.cmd(':TSInstall python')
+    vim.cmd(':TSInstall html')
+    vim.cmd(':TSInstall css')
+    vim.cmd(':TSInstall json')
+    vim.cmd(':TSInstall javascript')
+    vim.cmd(':TSInstall typescript')
+    vim.cmd(':TSInstall c')
+    vim.cmd(':TSInstall cpp')
+    vim.cmd(':TSInstall rust')
+    vim.cmd(':TSInstall go')
+    vim.cmd(':TSInstall bash')
+    vim.cmd(':TSInstall yaml')
+    vim.cmd(':TSInstall toml')
+    vim.cmd(':TSInstall graphql')
+    vim.cmd(':TSInstall php')
+    vim.cmd(':TSInstall java')
+    vim.cmd(':TSInstall kotlin')
+    vim.cmd(':TSInstall ruby')
 end
 
 -- Add the language packs for coc

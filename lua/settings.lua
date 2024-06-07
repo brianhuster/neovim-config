@@ -3,8 +3,9 @@ function bufEnter()
         vim.wo.number = false
         vim.o.winheight = 11
     elseif vim.bo.buftype == 'NvimTree' then
-        vim.o.winheight = 100
         vim.cmd("autocmd BufEnter NvimTree normal")
+    else
+        vim.o.winheight = 100
     end
 end
 

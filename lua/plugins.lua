@@ -35,8 +35,21 @@ require("lazy").setup({
     'numToStr/Comment.nvim',
     {
         "prettier/vim-prettier", 
-        run="npm install --frozen-lockfile --production"
+        run="npm install --frozen-lockfile --production",
     },
+    {
+        'brianhuster/live-preview.nvim',
+        run = 'npm install && npm install -g nodemon',
+        config = function()
+            require('live-preview')
+            vim.api.nvim_create_user_command('LivePreview', function()
+                require('live-preview').preview_file()
+            end, {})
+            vim.api.nvim_create_user_command('StopPreview', function()
+                require('live-preview').stop_preview()
+            end, {})
+        end,
+    }
 })
 
 -- disable netrw to avoid conflicts with nvim-tree

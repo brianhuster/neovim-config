@@ -39,7 +39,7 @@ require("lazy").setup({
     },
     {
         'brianhuster/live-preview.nvim',
-        run = 'npm install && npm install -g nodemon',
+        run = 'npm init && npm install && npm install -g nodemon',
         config = function()
             require('live-preview')
             vim.api.nvim_create_user_command('LivePreview', function()

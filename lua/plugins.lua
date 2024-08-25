@@ -90,7 +90,7 @@ vim.g['airline_section_b'] = '%{expand("%:t")}'
 
 -- pretier
 vim.g['prettier#config#tab_width'] = 4
-vim.g['prettier#config#use_tabs'] = 'false'
+vim.g['prettier#config#use_tabs'] = 'true'
 
 vim.cmd([[
   autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.json,*.css,*.scss,*.md,*.html,*.yml,*.py,*.lua,*.ejs,*.tsx,*.jsx PrettierAsync

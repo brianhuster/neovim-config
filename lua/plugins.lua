@@ -39,16 +39,8 @@ require("lazy").setup({
     },
     {
         'brianhuster/live-preview.nvim',
+        branch = "dev",
         run = 'npm init && npm install && npm install -g nodemon',
-        config = function()
-            require('live-preview')
-            vim.api.nvim_create_user_command('LivePreview', function()
-                require('live-preview').preview_file()
-            end, {})
-            vim.api.nvim_create_user_command('StopPreview', function()
-                require('live-preview').stop_preview()
-            end, {})
-        end,
     }
 })
 
@@ -65,6 +57,10 @@ require'nvim-treesitter.configs'.setup {
       enable = true,              
     },
 }
+
+-- Live-preview
+require('live-preview').setup()
+
 local parser_list = require'nvim-treesitter.parsers'.available_parsers()
 parsers = {'lua', 'python', 'html', 'css', 'json', 'javascript', 'typescript', 'c', 'cpp', 'rust', 'go', 'bash', 'yaml', 'toml', 'graphql', 'php', 'java', 'kotlin', 'ruby', 'rust', 'scss', 'tsx', 'vue', 'svelte', 'swift', 'bash'}
 
@@ -91,3 +87,11 @@ vim.g.coc_global_extensions = {
 vim.g['airline_powerline_fonts'] = 1
 vim.g['airline_theme'] = 'light'
 vim.g['airline_section_b'] = '%{expand("%:t")}'
+
+-- pretier
+vim.g['prettier#config#tab_width'] = 4
+vim.g['prettier#config#use_tabs'] = 'false'
+
+vim.cmd([[
+  autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.json,*.css,*.scss,*.md,*.html,*.yml,*.py,*.lua,*.ejs,*.tsx,*.jsx PrettierAsync
+]])

@@ -40,7 +40,11 @@ require("lazy").setup({
     {
         'brianhuster/live-preview.nvim',
         branch = "dev",
-        run = 'npm init && npm install && npm install -g nodemon',
+        run = 'npm install && npm install -g nodemon',
+    },
+    {
+        'nvim-telescope/telescope.nvim', tag = '0.1.8',
+        dependencies = { 'nvim-lua/plenary.nvim' }
     }
 })
 
@@ -87,11 +91,3 @@ vim.g.coc_global_extensions = {
 vim.g['airline_powerline_fonts'] = 1
 vim.g['airline_theme'] = 'light'
 vim.g['airline_section_b'] = '%{expand("%:t")}'
-
--- pretier
-vim.g['prettier#config#tab_width'] = 4
-vim.g['prettier#config#use_tabs'] = 'false'
-
-vim.cmd([[
-  autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.json,*.css,*.scss,*.md,*.html,*.yml,*.py,*.lua,*.ejs,*.tsx,*.jsx PrettierAsync
-]])

@@ -18,6 +18,11 @@ require("lazy").setup({
         lazy = false
     },
     {
+        "brianhuster/autosave.nvim",
+        branch="dev",
+        lazy = false
+    },
+    {
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
@@ -64,6 +69,13 @@ require'nvim-treesitter.configs'.setup {
       enable = true,              
     },
 }
+
+-- Autosave
+require('autosave').setup({
+    command = "AS",
+    toggle_arg = "toggle",
+    status_arg = "status",
+})
 
 -- Live-preview
 require('live-preview').setup()

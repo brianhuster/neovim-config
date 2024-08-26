@@ -40,12 +40,12 @@ require("lazy").setup({
     'numToStr/Comment.nvim',
     {
         "prettier/vim-prettier", 
-        run="npm install --frozen-lockfile --production",
+        build="npm install --frozen-lockfile --production",
     },
     {
         'brianhuster/live-preview.nvim',
         branch = "dev",
-        run = 'npm install && npm install -g nodemon',
+        build = 'npm install && npm install -g nodemon',
     },
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.8',

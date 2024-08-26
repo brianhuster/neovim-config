@@ -90,3 +90,4 @@ vim.o.encoding = 'utf8'
 vim.o.history = 5000
 vim.o.clipboard = 'unnamedplus'
 vim.o.autowriteall = true -- set autosave
+vim.opt.modeline = false

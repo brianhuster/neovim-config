@@ -70,6 +70,15 @@ require'nvim-treesitter.configs'.setup {
     },
 }
 
+local parser_list = require'nvim-treesitter.parsers'.available_parsers()
+parsers = {'lua', 'python', 'html', 'css', 'json', 'javascript', 'typescript', 'c', 'cpp', 'rust', 'go', 'bash', 'yaml', 'toml', 'graphql', 'php', 'java', 'kotlin', 'ruby', 'scss', 'tsx', 'vue', 'svelte', 'swift', 'bash', 'embedded_template'}
+
+for _, parser in pairs(parsers) do
+    if not vim.tbl_contains(parser_list, parser) then
+        vim.cmd(':TSInstall ' .. parser)
+    end
+end
+
 -- Autosave
 require('autosave').setup({
     command = "AS",
@@ -79,28 +88,6 @@ require('autosave').setup({
 
 -- Live-preview
 require('live-preview').setup()
-
-local parser_list = require'nvim-treesitter.parsers'.available_parsers()
-parsers = {'lua', 'python', 'html', 'css', 'json', 'javascript', 'typescript', 'c', 'cpp', 'rust', 'go', 'bash', 'yaml', 'toml', 'graphql', 'php', 'java', 'kotlin', 'ruby', 'rust', 'scss', 'tsx', 'vue', 'svelte', 'swift', 'bash'}
-
-for _, parser in pairs(parsers) do
-    if not vim.tbl_contains(parser_list, parser) then
-        vim.cmd(':TSInstall ' .. parser)
-    end
-end
-
--- Add the language packs for coc
-vim.g.coc_global_extensions = {
-    'coc-tsserver',
-    'coc-json',
-    'coc-css',
-    'coc-eslint',
-    'coc-prettier',
-    'coc-python',
-    'coc-clangd',
-    'coc-html',
-    'coc-lua'
-  }
 
 -- vim-airline
 vim.g['airline_powerline_fonts'] = 1

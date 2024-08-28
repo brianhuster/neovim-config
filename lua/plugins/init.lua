@@ -1,3 +1,3 @@
-require('plugins.lazy.nvim')
+require('plugins.lazy')
 require('plugins.coc')
 require('plugins.nvim-autopairs')

@@ -86,7 +86,7 @@ require'nvim-treesitter.configs'.setup {
 }
 
 local parser_list = require'nvim-treesitter.parsers'.available_parsers()
-parsers = {'lua', 'python', 'html', 'css', 'json', 'javascript', 'typescript', 'c', 'cpp', 'rust', 'go', 'bash', 'yaml', 'toml', 'graphql', 'php', 'java', 'kotlin', 'ruby', 'scss', 'tsx', 'vue', 'svelte', 'swift', 'bash', 'embedded_template'}
+local parsers = {'lua', 'python', 'html', 'css', 'json', 'javascript', 'typescript', 'c', 'cpp', 'rust', 'go', 'bash', 'yaml', 'toml', 'graphql', 'php', 'java', 'kotlin', 'ruby', 'scss', 'tsx', 'vue', 'svelte', 'swift', 'bash', 'embedded_template'}
 
 for _, parser in pairs(parsers) do
     if not vim.tbl_contains(parser_list, parser) then

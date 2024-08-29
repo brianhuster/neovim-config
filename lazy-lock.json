@@ -1,6 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
-  "autosave.nvim": { "branch": "dev", "commit": "1eba66db33504b1db330f68f46b797e69e6ff8c0" },
+  "autosave.nvim": { "branch": "dev", "commit": "174ad046205a9273519150159a1e7efdb9241710" },
   "coc.nvim": { "branch": "release", "commit": "ebe2a2058ed85d3884f8010a53bac25edbf9675c" },
   "copilot.vim": { "branch": "release", "commit": "25f73977033c597d530c7ab0e211d99b60927d2d" },
   "lazy.nvim": { "branch": "main", "commit": "077102c5bfc578693f12377846d427f49bc50076" },
@@ -12,6 +12,7 @@
   "nvim-web-devicons": { "branch": "master", "commit": "5be6c4e685618b99c3210a69375b38a1202369b4" },
   "plenary.nvim": { "branch": "master", "commit": "ec289423a1693aeae6cd0d503bac2856af74edaa" },
   "ripgrep": { "branch": "master", "commit": "ea99421ec896fcc9a9cd5367d42a80f89316822f" },
+  "telescope-coc.nvim": { "branch": "master", "commit": "b305a2c4f5de45f93b94e1a72078edd6d62e8cc1" },
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "tokyonight.nvim": { "branch": "main", "commit": "b0e7c7382a7e8f6456f2a95655983993ffda745e" },
   "vim-airline": { "branch": "master", "commit": "d25c049e617775eb2eb26c580e5dec591c94d480" },

@@ -20,7 +20,8 @@ require("lazy").setup({
     {
         "brianhuster/autosave.nvim",
         branch="dev",
-        lazy = false
+        lazy = false,
+        event = "InsertEnter",
     },
     {
         "folke/tokyonight.nvim",
@@ -32,6 +33,7 @@ require("lazy").setup({
     'nvim-tree/nvim-web-devicons',
     'vim-airline/vim-airline',
     'vim-airline/vim-airline-themes',
+    'fannheyward/telescope-coc.nvim',
     {
         "neoclide/coc.nvim", 
         branch="release"
@@ -46,6 +48,7 @@ require("lazy").setup({
         'brianhuster/live-preview.nvim',
         branch = "dev",
         build = 'npm install && npm install -g nodemon',
+        event="InsertEnter",
     },
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.8',

@@ -62,5 +62,13 @@ vim.opt.history = 5000
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.autowriteall = true -- set autosave
 vim.opt.modeline = false
-vim.opt.filetype = 'on'
 vim.g.mapleader = ' '
+-- vim.cmd([[autocmd BufRead,BufNewFile *.ejs set filetype=html]])
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = '*',
+    callback = function()
+        vim.cmd('TSBufEnable highlight')
+    end
+})
+
+

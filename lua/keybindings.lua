@@ -27,15 +27,14 @@ vim.api.nvim_set_keymap('v', 't', ':lua TerminalMode()<CR>', {})
 vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', {})
 
 -- delete without copying to clipboard
-vim.api.nvim_set_keymap('n', 'x', '"_d', {})
-vim.api.nvim_set_keymap('v', 'x', '"_d', {})
-vim.api.nvim_set_keymap('n', 'xx', '"_dd', {})
-vim.api.nvim_set_keymap('v', 'xx', '"_dd', {})
-
--- select all
-vim.api.nvim_set_keymap('n', '<M-a>', 'ggVG', {})
-vim.api.nvim_set_keymap('i', '<M-a>', 'ggVG', {})
-vim.api.nvim_set_keymap('v', '<M-a>', 'ggVG', {})
+vim.api.nvim_set_keymap('n', '<BS>', '"_d', {})
+vim.api.nvim_set_keymap('v', '<BS>', '"_d', {})
+vim.api.nvim_set_keymap('n', '<BS>', '"_dd', {})
+vim.api.nvim_set_keymap('v', '<BS><BS>', '"_dd', {})
+vim.api.nvim_set_keymap('n', '<Del>', '"_d', {})
+vim.api.nvim_set_keymap('v', '<Del>', '"_d', {})
+vim.api.nvim_set_keymap('n', '<Del>', '"_dd', {})
+vim.api.nvim_set_keymap('v', '<Del><Del>', '"_dd', {})
 
 -- prettier
 vim.api.nvim_set_keymap('n', '<C-p>', ':Prettier<CR>', {})

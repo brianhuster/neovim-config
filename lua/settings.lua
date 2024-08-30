@@ -48,18 +48,19 @@ vim.api.nvim_create_autocmd({"InsertLeave"}, {
 IBusOff()
 
 -- General settings
-vim.o.mouse = 'a'
-vim.o.number = true
-vim.o.hidden = true
-vim.o.expandtab = true
-vim.o.autoindent = true
-vim.o.smartindent = true
-vim.o.cursorline = false
-vim.o.shiftwidth = 4
-vim.o.tabstop = 4
-vim.o.encoding = 'utf8'
-vim.o.history = 5000
-vim.o.clipboard = 'unnamedplus'
-vim.o.autowriteall = true -- set autosave
+vim.opt.mouse = 'a'
+vim.opt.number = true
+vim.opt.hidden = true
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.cursorline = false
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.encoding = 'utf8'
+vim.opt.history = 5000
+vim.opt.clipboard = 'unnamedplus'
+vim.opt.autowriteall = true -- set autosave
 vim.opt.modeline = false
+vim.opt.filetype = 'on'
 vim.g.mapleader = ' '

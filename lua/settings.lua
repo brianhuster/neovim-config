@@ -63,7 +63,13 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.autowriteall = true -- set autosave
 vim.opt.modeline = false
 vim.g.mapleader = ' '
--- vim.cmd([[autocmd BufRead,BufNewFile *.ejs set filetype=html]])
+vim.cmd([[autocmd BufRead,BufNewFile *.ejs set filetype=html]])
+vim.api.nvim_create_autocmd('BufEnter', {
+    pattern = '*',
+    callback = function()
+        vim.cmd('set number')
+    end
+})
 vim.api.nvim_create_autocmd('FileType', {
     pattern = '*',
     callback = function()

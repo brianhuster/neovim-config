@@ -7,6 +7,9 @@ function bufEnter()
     else
         vim.o.winheight = 100
     end
+    if vim.bo.filetype ~= 'NvimTree' then
+        vim.cmd("NvimTreeClose")
+    end
 end
 
 function VimEnter()

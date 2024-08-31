@@ -7,6 +7,7 @@
 
 The configuration includes the following custom keybindings:
 
+- `Alt+E` : Open Nvim-Tree
 - Press `Backspace` or `Delete` key : delete seleted text without cutting it
 - Press `Backspace` or `Delete` twice : to delete a line without cutting it
 - `Ctrl+P`: Format code with Prettier

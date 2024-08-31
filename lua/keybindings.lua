@@ -13,7 +13,7 @@ function TerminalMode()
         end
     end
     if term_win == -1 then
-        vim.cmd('split | terminal')
+        vim.cmd('belowright split | terminal')
     else
         vim.cmd(term_win .. 'wincmd w')
     end
@@ -25,6 +25,12 @@ end
 vim.api.nvim_set_keymap('n', 't', ':lua TerminalMode()<CR>', {})
 vim.api.nvim_set_keymap('v', 't', ':lua TerminalMode()<CR>', {})
 vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', {})
+
+-- NvimTree keybindings
+vim.api.nvim_set_keymap('n', '<M-e>', ':NvimTreeOpen<CR>', {})
+vim.api.nvim_set_keymap('v', '<M-e>', ':NvimTreeOpen<CR>', {})
+vim.api.nvim_set_keymap('i', '<M-e>', ':NvimTreeOpen<CR>', {})
+
 
 -- Remove the default keybindings for <BS> (Backspace) and <Del> (Delete)
 vim.api.nvim_set_keymap('n', '<BS>', '<nop>', { noremap = true, silent = true })

@@ -45,6 +45,7 @@ vim.api.nvim_create_autocmd({"InsertLeave"}, {
   group = "IBusHandler",
 })
 
+
 IBusOff()
 
 -- General settings

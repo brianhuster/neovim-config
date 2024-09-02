@@ -5,6 +5,21 @@ return {
         'neovim/nvim-lspconfig',
     },
     config = function ()
+        local lang_servers = {
+            "arduino_language_server",
+            "bashls",
+            "cssls",
+            "tailwindcss",
+            "dockerls",
+            "html",
+            "tsserver",
+            "jsonls",
+            "lua_ls",
+            "marksman",
+            "phpactor",
+            "pyright",
+            "volar",
+        }
         require('mason').setup({
             ui = {
                 icons = {
@@ -15,36 +30,11 @@ return {
             }
         })
         require("mason-lspconfig").setup {
-            ensure_installed = {
-                "arduino_language_server",
-                "bashls",
-                "clangd",
-                "cssls",
-                "tailwindcss",
-                "dockerls",
-                "html",
-                "tsserver",
-                "jsonls",
-                "lua_ls",
-                "marksman",
-                "phpactor",
-                "pyright",
-                "volar",
-            },
+            ensure_installed = lang_servers,
         }
-        require("lspconfig").arduino_language_server.setup{}
-        require('lspconfig').bashls.setup{}
-        require('lspconfig').clangd.setup{}
-        require('lspconfig').cssls.setup{}
-        require('lspconfig').tailwindcss.setup{}
-        require('lspconfig').dockerls.setup{}
-        require('lspconfig').html.setup{}
-        require('lspconfig').tsserver.setup{}
-        require('lspconfig').jsonls.setup{}
-        require('lspconfig').lua_ls.setup{}
-        require('lspconfig').marksman.setup{}
-        require('lspconfig').phpactor.setup{}
-        require('lspconfig').pyright.setup{}
-        require('lspconfig').volar.setup{}
+        for _, lsp in ipairs(lang_servers) do
+            require('lspconfig')[lsp].setup {}
+        end
+        require('lspconfig').ccls = {}
     end,
 }

@@ -2,7 +2,7 @@ function bufEnter()
     if vim.bo.buftype == 'terminal' then
         vim.wo.number = false
         vim.o.winheight = 12
-        vim.o.number=false
+        vim.o.number = false
     elseif vim.bo.buftype == 'nofile' then
         vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, true, true), 'n', true)
     else
@@ -30,5 +30,3 @@ vim.cmd([[
     autocmd VimEnter * lua VimEnter()
     autocmd BufEnter * lua bufEnter()
 ]])
-
-

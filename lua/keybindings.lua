@@ -20,10 +20,9 @@ function TerminalMode()
     vim.cmd('startinsert')
 end
 
-
 -- Terminal keybindings
-vim.api.nvim_set_keymap('n', 't', ':lua TerminalMode()<CR>', {})
-vim.api.nvim_set_keymap('v', 't', ':lua TerminalMode()<CR>', {})
+vim.keymap.set('n', 't', function() TerminalMode() end)
+vim.keymap.set('v', 't', function() TerminalMode() end)
 vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', {})
 
 -- NvimTree keybindings
@@ -45,7 +44,7 @@ vim.api.nvim_set_keymap('i', '<Del>', '<nop>', { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<BS>', '"_d', {})
 vim.api.nvim_set_keymap('v', '<BS>', '"_d', {})
 vim.api.nvim_set_keymap('n', '<BS><BS>', '"_dd', {})
-vim.api.nvim_set_keymap('v', '<BS><BS>', '"_dd', {})-- delete without copying to clipboard
+vim.api.nvim_set_keymap('v', '<BS><BS>', '"_dd', {}) -- delete without copying to clipboard
 
 -- Delete a line without copying it
 vim.api.nvim_set_keymap('n', '<Del>', '"_d', {})
@@ -57,5 +56,3 @@ vim.api.nvim_set_keymap('v', '<Del><Del>', '"_dd', {})
 vim.api.nvim_set_keymap('n', '<C-p>', ':Prettier<CR>', {})
 vim.api.nvim_set_keymap('i', '<C-p>', ':Prettier<CR>', {})
 vim.api.nvim_set_keymap('v', '<C-p>', ':PrettierFragment<CR>', {})
-
-

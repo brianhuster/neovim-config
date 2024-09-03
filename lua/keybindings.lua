@@ -23,36 +23,31 @@ end
 -- Terminal keybindings
 vim.keymap.set('n', 't', function() TerminalMode() end)
 vim.keymap.set('v', 't', function() TerminalMode() end)
-vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', {})
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { silent = true })
 
 -- NvimTree keybindings
-vim.api.nvim_set_keymap('n', '<M-e>', ':NvimTreeOpen<CR>', {})
-vim.api.nvim_set_keymap('v', '<M-e>', ':NvimTreeOpen<CR>', {})
-vim.api.nvim_set_keymap('t', '<M-e>', '<Esc>:NvimTreeOpen<CR>', {})
-vim.api.nvim_set_keymap('i', '<M-e>', '<Esc><Esc>:NvimTreeOpen<CR>', {})
+vim.keymap.set('n', '<M-e>', ':NvimTreeOpen<CR>', { silent = true })
+vim.keymap.set('v', '<M-e>', ':NvimTreeOpen<CR>', { silent = true })
+vim.keymap.set('t', '<M-e>', '<Esc>:NvimTreeOpen<CR>', { silent = true })
+vim.keymap.set('i', '<M-e>', '<Esc><Esc>:NvimTreeOpen<CR>', { silent = true })
 
 -- Remove the default keybindings for <BS> (Backspace) and <Del> (Delete)
-vim.api.nvim_set_keymap('n', '<BS>', '<nop>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '<BS>', '<nop>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<BS>', '<nop>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Del>', '<nop>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '<Del>', '<nop>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<Del>', '<nop>', { noremap = true, silent = true })
+vim.keymap.set('n', '<BS>', '<nop>', { noremap = true, silent = true })
+vim.keymap.set('v', '<BS>', '<nop>', { noremap = true, silent = true })
+vim.keymap.set('i', '<BS>', '<nop>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Del>', '<nop>', { noremap = true, silent = true })
+vim.keymap.set('v', '<Del>', '<nop>', { noremap = true, silent = true })
+vim.keymap.set('i', '<Del>', '<nop>', { noremap = true, silent = true })
 
 
 -- delete selected text without copying it
-vim.api.nvim_set_keymap('n', '<BS>', '"_d', {})
-vim.api.nvim_set_keymap('v', '<BS>', '"_d', {})
-vim.api.nvim_set_keymap('n', '<BS><BS>', '"_dd', {})
-vim.api.nvim_set_keymap('v', '<BS><BS>', '"_dd', {}) -- delete without copying to clipboard
+vim.keymap.set('n', '<BS>', '"_d', { silent = true })
+vim.keymap.set('v', '<BS>', '"_d', { silent = true })
+vim.keymap.set('n', '<Del>', '"_d', { silent = true })
+vim.keymap.set('v', '<Del>', '"_d', { silent = true })
 
 -- Delete a line without copying it
-vim.api.nvim_set_keymap('n', '<Del>', '"_d', {})
-vim.api.nvim_set_keymap('v', '<Del>', '"_d', {})
-vim.api.nvim_set_keymap('n', '<Del><Del>', '"_dd', {})
-vim.api.nvim_set_keymap('v', '<Del><Del>', '"_dd', {})
-
--- prettier
-vim.api.nvim_set_keymap('n', '<C-p>', ':Prettier<CR>', {})
-vim.api.nvim_set_keymap('i', '<C-p>', ':Prettier<CR>', {})
-vim.api.nvim_set_keymap('v', '<C-p>', ':PrettierFragment<CR>', {})
+vim.keymap.set('n', '<BS><BS>', '"_dd', { silent = true })
+vim.keymap.set('v', '<BS><BS>', '"_dd', { silent = true })
+vim.keymap.set('n', '<Del><Del>', '"_dd', { silent = true })
+vim.keymap.set('v', '<Del><Del>', '"_dd', { silent = true })

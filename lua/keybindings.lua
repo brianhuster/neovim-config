@@ -25,21 +25,6 @@ vim.keymap.set('n', 't', function() TerminalMode() end)
 vim.keymap.set('v', 't', function() TerminalMode() end)
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { silent = true })
 
--- NvimTree keybindings
-vim.keymap.set('n', '<M-e>', ':NvimTreeOpen<CR>', { silent = true })
-vim.keymap.set('v', '<M-e>', ':NvimTreeOpen<CR>', { silent = true })
-vim.keymap.set('t', '<M-e>', '<Esc>:NvimTreeOpen<CR>', { silent = true })
-vim.keymap.set('i', '<M-e>', '<Esc><Esc>:NvimTreeOpen<CR>', { silent = true })
-
--- Remove the default keybindings for <BS> (Backspace) and <Del> (Delete)
-vim.keymap.set('n', '<BS>', '<nop>', { noremap = true, silent = true })
-vim.keymap.set('v', '<BS>', '<nop>', { noremap = true, silent = true })
-vim.keymap.set('i', '<BS>', '<nop>', { noremap = true, silent = true })
-vim.keymap.set('n', '<Del>', '<nop>', { noremap = true, silent = true })
-vim.keymap.set('v', '<Del>', '<nop>', { noremap = true, silent = true })
-vim.keymap.set('i', '<Del>', '<nop>', { noremap = true, silent = true })
-
-
 -- delete selected text without copying it
 vim.keymap.set('n', '<BS>', '"_d', { silent = true })
 vim.keymap.set('v', '<BS>', '"_d', { silent = true })

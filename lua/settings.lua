@@ -76,28 +76,3 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.cmd('TSBufEnable highlight')
     end
 })
-
-local disabled_built_ins = {
-    "2html_plugin",
-    "TOhtml",
-    "getscript",
-    "getscriptPlugin",
-    "logipat",
-    "netrw",
-    "netrwPlugin",
-    "netrwSettings",
-    "netrwFileHandlers",
-    "rrhelper",
-    "spellfile_plugin",
-    "vimball",
-    "vimballPlugin",
-    "tutor",
-    "rplugin",
-    "compiler",
-    "bugreport",
-    "ftplugin",
-}
-
-for _, plugin in pairs(disabled_built_ins) do
-    vim.g["loaded_" .. plugin] = 1
-end

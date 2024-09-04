@@ -1,48 +1,47 @@
-
 -- Set up the use of ibus in neovim
 -- Define global variable to store the previous IBus engine
 _G.ibus_prev_engine = ""
 
 -- Function to turn off IBus (switch to English)
 function IBusOff()
-  -- Save the current engine
-  _G.ibus_prev_engine = vim.fn.system('ibus engine')
-  -- Switch to English engine
-  os.execute('ibus engine xkb:us::eng')
+    -- Save the current engine
+    _G.ibus_prev_engine = vim.fn.system('ibus engine')
+    -- Switch to English engine
+    os.execute('ibus engine xkb:us::eng')
 end
 
 -- Function to turn on IBus (restore the previous engine)
 function IBusOn()
-  local current_engine = vim.fn.system('ibus engine')
-  -- If the engine was not set to English in normal mode,
-  -- save the current engine to restore it later
-  if not string.find(current_engine, 'xkb:us::eng') then
-    _G.ibus_prev_engine = current_engine
-  end
-  -- Restore the previous engine
-  os.execute('ibus engine ' .. _G.ibus_prev_engine)
+    local current_engine = vim.fn.system('ibus engine')
+    -- If the engine was not set to English in normal mode,
+    -- save the current engine to restore it later
+    if not string.find(current_engine, 'xkb:us::eng') then
+        _G.ibus_prev_engine = current_engine
+    end
+    -- Restore the previous engine
+    os.execute('ibus engine ' .. _G.ibus_prev_engine)
 end
 
 vim.api.nvim_create_augroup("IBusHandler", { clear = true })
-vim.api.nvim_create_autocmd({"CmdLineEnter"}, {
-  pattern = "[/?]",
-  callback = IBusOn,
-  group = "IBusHandler",
+vim.api.nvim_create_autocmd({ "CmdLineEnter" }, {
+    pattern = "[/?]",
+    callback = IBusOn,
+    group = "IBusHandler",
 })
-vim.api.nvim_create_autocmd({"CmdLineLeave"}, {
-  pattern = "[/?]",
-  callback = IBusOff,
-  group = "IBusHandler",
+vim.api.nvim_create_autocmd({ "CmdLineLeave" }, {
+    pattern = "[/?]",
+    callback = IBusOff,
+    group = "IBusHandler",
 })
-vim.api.nvim_create_autocmd({"InsertEnter"}, {
-  pattern = "*",
-  callback = IBusOn,
-  group = "IBusHandler",
+vim.api.nvim_create_autocmd({ "InsertEnter" }, {
+    pattern = "*",
+    callback = IBusOn,
+    group = "IBusHandler",
 })
-vim.api.nvim_create_autocmd({"InsertLeave"}, {
-  pattern = "*",
-  callback = IBusOff,
-  group = "IBusHandler",
+vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+    pattern = "*",
+    callback = IBusOff,
+    group = "IBusHandler",
 })
 
 
@@ -78,4 +77,27 @@ vim.api.nvim_create_autocmd('FileType', {
     end
 })
 
+local disabled_built_ins = {
+    "2html_plugin",
+    "TOhtml",
+    "getscript",
+    "getscriptPlugin",
+    "logipat",
+    "netrw",
+    "netrwPlugin",
+    "netrwSettings",
+    "netrwFileHandlers",
+    "rrhelper",
+    "spellfile_plugin",
+    "vimball",
+    "vimballPlugin",
+    "tutor",
+    "rplugin",
+    "compiler",
+    "bugreport",
+    "ftplugin",
+}
 
+for _, plugin in pairs(disabled_built_ins) do
+    vim.g["loaded_" .. plugin] = 1
+end

@@ -1,3 +1,30 @@
+-- Vô hiệu hóa các plugin mặc định không cần thiết trong Neovim
+local disabled_built_ins = {
+    "2html_plugin",
+    "getscript",
+    "getscriptPlugin",
+    "logipat",
+    "netrw",
+    "netrwPlugin",
+    "netrwSettings",
+    "netrwFileHandlers",
+    "matchit",
+    "rrhelper",
+    "spellfile_plugin",
+    "vimball",
+    "vimballPlugin",
+    "tutor",
+    "rplugin",
+    "compiler",
+    "bugreport",
+    "ftplugin",
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+    vim.g["loaded_" .. plugin] = 1
+end
+
+
 -- Set up the use of ibus in neovim
 -- Define global variable to store the previous IBus engine
 _G.ibus_prev_engine = ""

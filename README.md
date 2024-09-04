@@ -1,13 +1,13 @@
 # neovim-config
 
-## Screenshot
-![image](https://github.com/brianhuster/neovim-config/assets/111893501/3ec40738-e6fc-4a39-9109-c19148235037)
-
 ## Keybindings
 
 The configuration includes the following custom keybindings:
 
-- `Alt+E` : Open Nvim-Tree
+- `Alt+E` : Open Neotree
 - Press `Backspace` or `Delete` key : delete seleted text without cutting it
 - Press `Backspace` or `Delete` twice : to delete a line without cutting it
-- `Ctrl+P`: Format code with Prettier
+- In insert mode, to accept Copilot suggestion :
+    - `Alt+Enter` to accept the whole suggestion
+    - `Alt+l` to accept a line
+    - `Alt+w` to accept a word

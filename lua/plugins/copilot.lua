@@ -21,7 +21,7 @@ local function setup_copilot()
             hide_during_completion = true,
             debounce = 75,
             keymap = {
-                accept = "<Tab>",
+                accept = "<M-CR>",
                 accept_word = "<M-w>",
                 accept_line = "<M-l>",
                 next = "<M-]>",

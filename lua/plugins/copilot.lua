@@ -30,6 +30,8 @@ local function setup_copilot()
             },
         },
         filetypes = {
+            yaml = false,
+            markdown = true,
             help = false,
             gitcommit = false,
             gitrebase = false,

@@ -1,5 +1,7 @@
 # neovim-config
 
+Support Neovim 0.10 and later
+
 ## Keybindings
 
 The configuration includes the following custom keybindings:
@@ -11,3 +13,7 @@ The configuration includes the following custom keybindings:
     - `Alt+Enter` to accept the whole suggestion
     - `Alt+l` to accept a line
     - `Alt+w` to accept a word
+
+## Note
+
+If you use Ibus-bamboo, please press `~` to choose the mode `Forward key event I`

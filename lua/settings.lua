@@ -1,6 +1,7 @@
 -- Vô hiệu hóa các plugin mặc định không cần thiết trong Neovim
 local disabled_built_ins = {
     "2html_plugin",
+    "tohtml",
     "getscript",
     "getscriptPlugin",
     "logipat",
@@ -14,6 +15,15 @@ local disabled_built_ins = {
     "compiler",
     "bugreport",
     "ftplugin",
+    "netrw",
+    "netrwPlugin",
+    "netrwSettings",
+    "netrwFileHandlers",
+    "gzip",
+    "zip",
+    "zipPlugin",
+    "tar",
+    "tarPlugin"
 }
 
 for _, plugin in pairs(disabled_built_ins) do

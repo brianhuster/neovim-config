@@ -45,7 +45,7 @@ return {
             "lua_ls",
             "marksman",
             "phpactor",
-            "pyright",
+            "python-lsp-server",
             "volar",
         }
         require('mason').setup({

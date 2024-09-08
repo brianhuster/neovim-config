@@ -2,8 +2,8 @@ local function neotree_keybindings()
     -- NvimTree keybindings
     vim.keymap.set('n', '<M-e>', ':Neotree toggle<CR>', { silent = true })
     vim.keymap.set('v', '<M-e>', ':Neotree toggle<CR>', { silent = true })
-    vim.keymap.set('t', '<M-e>', '<Esc><Esc>:Neotree toggle<CR>', { silent = true })
-    vim.keymap.set('i', '<M-e>', '<C-\\><C-n>:Neotree toggle<CR>', { silent = true })
+    vim.keymap.set('t', '<M-e>', '<C-\\><C-n>:Neotree toggle<CR>', { silent = true })
+    vim.keymap.set('i', '<M-e>', '<Esc><Esc>:Neotree toggle<CR>', { silent = true })
 end
 
 local function neotree_autocmd()

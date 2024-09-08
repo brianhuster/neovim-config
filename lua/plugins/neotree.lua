@@ -3,7 +3,7 @@ local function neotree_keybindings()
     vim.keymap.set('n', '<M-e>', ':Neotree toggle<CR>', { silent = true })
     vim.keymap.set('v', '<M-e>', ':Neotree toggle<CR>', { silent = true })
     vim.keymap.set('t', '<M-e>', '<Esc><Esc>:Neotree toggle<CR>', { silent = true })
-    vim.keymap.set('i', '<M-e>', '<Esc><Esc>:Neotree toggle<CR>', { silent = true })
+    vim.keymap.set('i', '<M-e>', '<C-\\><C-n>:Neotree toggle<CR>', { silent = true })
 end
 
 local function neotree_autocmd()
@@ -25,9 +25,18 @@ return {
         "MunifTanjim/nui.nvim",
         "3rd/image.nvim"
     },
-    opts = {},
     config = function()
         neotree_keybindings()
         neotree_autocmd()
-    end
+        require('neo-tree').setup({
+            filesystem = {
+                filtered_items = {
+                    visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"
+                    show_hidden_count = true,
+                    hide_dotfiles = false,
+                    hide_gitignored = true,
+                },
+            },
+        })
+    end,
 }

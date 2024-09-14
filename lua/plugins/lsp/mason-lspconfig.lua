@@ -40,7 +40,7 @@ return {
             "tailwindcss",
             "dockerls",
             "html",
-            "tsserver",
+            "ts_ls",
             "jsonls",
             "lua_ls",
             "marksman",

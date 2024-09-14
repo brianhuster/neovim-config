@@ -14,6 +14,8 @@ function TerminalMode()
     end
     if term_win == -1 then
         vim.cmd('belowright split | terminal')
+        vim.wo.number = false
+        vim.o.winheight = 12
     else
         vim.cmd(term_win .. 'wincmd w')
     end

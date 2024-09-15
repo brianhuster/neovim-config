@@ -1,21 +1,23 @@
 return {
     "stevearc/oil.nvim",
+    dependencies = {
+        "nvim-tree/nvim-web-devicons"
+    },
+
     config = function()
         require("oil").setup({
             view_options = {
                 show_hidden = true,
             },
-            float = {  
-                -- Padding around the floating window  
-                padding = 2,  
-                max_width = 90,  
-                win_options = {  
-                    winblend = 0,  
+            float = {
+                -- Padding around the floating window
+                padding = 2,
+                max_width = 90,
+                win_options = {
+                    winblend = 0,
                 },
             },
         })
         vim.keymap.set('n', '<M-e>', require('oil').toggle_float)
     end,
-    -- Optional dependencies
-    dependencies = { "nvim-tree/nvim-web-devicons" },
 }

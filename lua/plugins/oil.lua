@@ -19,5 +19,8 @@ return {
             },
         })
         vim.keymap.set('n', '<M-e>', require('oil').toggle_float)
+        vim.keymap.set('i', '<M-e>', require('oil').toggle_float)
+        vim.keymap.set('t', '<M-e>', require('oil').toggle_float)
+        vim.keymap.set('v', '<M-e>', require('oil').toggle_float)
     end,
 }

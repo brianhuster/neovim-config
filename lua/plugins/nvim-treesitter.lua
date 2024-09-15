@@ -2,15 +2,15 @@ return {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
     lazy = false,
-    build = function ()
+    build = function()
         vim.cmd('TSInstall all')
     end,
-    config = function ()
-        require'nvim-treesitter.configs'.setup {
+    config = function()
+        require 'nvim-treesitter.configs'.setup {
             highlight = {
-              enable = true,              
+                enable = true,
             },
         }
+        vim.cmd('TSUpdate')
     end
 }
-

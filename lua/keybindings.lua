@@ -24,17 +24,17 @@ end
 
 -- Terminal keybindings
 vim.keymap.set('n', 't', function() TerminalMode() end)
-vim.keymap.set('v', 't', function() TerminalMode() end)
+vim.keymap.set('x', 't', function() TerminalMode() end)
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { silent = true })
 
 -- delete selected text without copying it
 vim.keymap.set('n', '<BS>', '"_d', { silent = true })
-vim.keymap.set('v', '<BS>', '"_d', { silent = true })
+vim.keymap.set('x', '<BS>', '"_d', { silent = true })
 vim.keymap.set('n', '<Del>', '"_d', { silent = true })
-vim.keymap.set('v', '<Del>', '"_d', { silent = true })
+vim.keymap.set('x', '<Del>', '"_d', { silent = true })
 
 -- Delete a line without copying it
 vim.keymap.set('n', '<BS><BS>', '"_dd', { silent = true })
-vim.keymap.set('v', '<BS><BS>', '"_dd', { silent = true })
+vim.keymap.set('x', '<BS><BS>', '"_dd', { silent = true })
 vim.keymap.set('n', '<Del><Del>', '"_dd', { silent = true })
-vim.keymap.set('v', '<Del><Del>', '"_dd', { silent = true })
+vim.keymap.set('x', '<Del><Del>', '"_dd', { silent = true })

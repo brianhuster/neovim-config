@@ -20,7 +20,6 @@ function TerminalMode()
         vim.cmd(term_win .. 'wincmd w')
     end
     vim.cmd('startinsert')
-end
 
 -- Terminal keybindings
 vim.keymap.set('n', 't', function() TerminalMode() end)

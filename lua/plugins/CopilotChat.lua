@@ -4,7 +4,7 @@ return {
         branch = "canary",
         dependencies = {
             { "github/copilot.vim" }, -- or github/copilot.vim
-            { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+            { "nvim-lua/plenary.nvimt" }, -- for curl, log wrapper
         },
         build = "make tiktoken",    -- Only on MacOS or Linux
         opts = {

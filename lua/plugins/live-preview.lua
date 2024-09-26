@@ -1,6 +1,6 @@
 return {
         'brianhuster/live-preview.nvim',
         branch = "dev",
-        ft = {'html', 'md', 'markdown'},
+        ft = {'html', 'markdown', 'asciidoc'},
         opts = {},
     }

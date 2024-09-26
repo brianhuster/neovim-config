@@ -17,3 +17,5 @@ The configuration includes the following custom keybindings:
 ## Note
 
 If you use Ibus-bamboo, please press `~` to choose the mode `Forward key event I`
+
+

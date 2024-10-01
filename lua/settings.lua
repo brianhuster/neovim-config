@@ -33,7 +33,7 @@ end
 -- General settings
 vim.opt.mouse = 'a'
 vim.opt.number = true
-vim.opt.expandtab = true
+vim.opt.expandtab = false
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.cursorline = false

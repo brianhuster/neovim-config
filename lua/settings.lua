@@ -25,14 +25,3 @@ vim.api.nvim_create_autocmd('FileType', {
 		vim.cmd('TSBufEnable highlight')
 	end
 })
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		local clients = vim.lsp.get_clients()
-		for _, client in ipairs(clients) do
-			local id = client.id
-			vim.lsp.completion.enable(true, id, 0)
-			return
-		end
-	end,
-})

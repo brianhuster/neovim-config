@@ -1,35 +1,3 @@
--- Vô hiệu hóa các plugin mặc định không cần thiết trong Neovim
-local disabled_built_ins = {
-    "2html_plugin",
-    "tohtml",
-    "getscript",
-    "getscriptPlugin",
-    "logipat",
-    "matchit",
-    "rrhelper",
-    "spellfile_plugin",
-    "vimball",
-    "vimballPlugin",
-    "tutor",
-    "rplugin",
-    "compiler",
-    "bugreport",
-    "ftplugin",
-    "netrw",
-    "netrwPlugin",
-    "netrwSettings",
-    "netrwFileHandlers",
-    "gzip",
-    "zip",
-    "zipPlugin",
-    "tar",
-    "tarPlugin"
-}
-
-for _, plugin in pairs(disabled_built_ins) do
-    vim.g["loaded_" .. plugin] = 1
-end
-
 -- General settings
 vim.opt.mouse = 'a'
 vim.opt.number = true
@@ -56,4 +24,15 @@ vim.api.nvim_create_autocmd('FileType', {
     callback = function()
         vim.cmd('TSBufEnable highlight')
     end
+})
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+    callback = function()
+        local clients = vim.lsp.get\_clients()
+        for \_, client in ipairs(clients) do
+            local id = client.id
+            vim.lsp.completion.enable(true, id, 1, { autotrigger = true })
+            return
+        end
+    end,
 })

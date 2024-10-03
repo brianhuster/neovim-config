@@ -14,25 +14,25 @@ vim.opt.modeline = false
 vim.g.mapleader = ' '
 vim.cmd([[autocmd BufRead,BufNewFile *.ejs set filetype=html]])
 vim.api.nvim_create_autocmd('BufEnter', {
-    pattern = '*',
-    callback = function()
-        vim.cmd('set number')
-    end
+	pattern = '*',
+	callback = function()
+		vim.cmd('set number')
+	end
 })
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = '*',
-    callback = function()
-        vim.cmd('TSBufEnable highlight')
-    end
+	pattern = '*',
+	callback = function()
+		vim.cmd('TSBufEnable highlight')
+	end
 })
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
-    callback = function()
-        local clients = vim.lsp.get\_clients()
-        for \_, client in ipairs(clients) do
-            local id = client.id
-            vim.lsp.completion.enable(true, id, 1, { autotrigger = true })
-            return
-        end
-    end,
+	callback = function()
+		local clients = vim.lsp.get_clients()
+		for _, client in ipairs(clients) do
+			local id = client.id
+			vim.lsp.completion.enable(true, id, 0)
+			return
+		end
+	end,
 })

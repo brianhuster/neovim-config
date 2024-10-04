@@ -25,6 +25,14 @@ return {
 				end
 			end,
 		})
+		vim.api.nvim_create_autocmd({"CursorMoved"}, {
+            callback = function()
+                vim.diagnostic.config({
+                    virtual_text = false,
+                })
+                vim.diagnostic.open_float(nil, { focusable = false })
+            end,
+        })
 	end
 }
 

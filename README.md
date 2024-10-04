@@ -6,7 +6,7 @@ Support Neovim ^0.11.0 with vim.lsp.completion
 
 The configuration includes the following custom keybindings:
 
-- `Alt+E` : Open Neotree
+- `Alt+E` : Open oil.nvim explorer
 - Press `Backspace` or `Delete` key : delete seleted text without cutting it
 - Press `Backspace` or `Delete` twice : to delete a line without cutting it
 - In insert mode, to accept Copilot suggestion :

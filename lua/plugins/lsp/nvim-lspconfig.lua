@@ -12,6 +12,7 @@ return {
 				if client.supports_method('textDocument/completion') and vim.lsp.completion then
 					-- Enable auto-completion
 					vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+					vim.o.completeopt = 'menuone,noinsert,fuzzy'
 				end
 				if client.supports_method('textDocument/formatting') then
 					-- Format the current buffer on save
@@ -19,20 +20,18 @@ return {
 						buffer = args.buf,
 						callback = function()
 							vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
-							vim.o.completeopt = 'menuone,noinsert,fuzzy'
 						end,
 					})
 				end
 			end,
 		})
-		vim.api.nvim_create_autocmd({"CursorMoved"}, {
-            callback = function()
-                vim.diagnostic.config({
-                    virtual_text = false,
-                })
-                vim.diagnostic.open_float(nil, { focusable = false })
-            end,
-        })
+		vim.api.nvim_create_autocmd({ "CursorMoved" }, {
+			callback = function()
+				vim.diagnostic.config({
+					virtual_text = false,
+				})
+				vim.diagnostic.open_float(nil, { focusable = false })
+			end,
+		})
 	end
 }
-

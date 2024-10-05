@@ -12,7 +12,7 @@ return {
 				if client.supports_method('textDocument/completion') and vim.lsp.completion then
 					-- Enable auto-completion
 					vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
-					vim.o.completeopt = 'menuone,noinsert,fuzzy'
+					vim.o.completeopt = 'menuone,noinsert,fuzzy,noselect'
 				end
 				if client.supports_method('textDocument/formatting') then
 					-- Format the current buffer on save

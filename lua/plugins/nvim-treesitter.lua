@@ -11,6 +11,5 @@ return {
                 enable = true,
             },
         }
-        vim.cmd('TSUpdate')
     end
 }
